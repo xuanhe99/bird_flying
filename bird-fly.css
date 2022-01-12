@@ -1,0 +1,306 @@
+body {
+    background-color: rgba(43, 211, 223, 0.3);
+}
+
+
+/* Defines perspective view for 3-D positioned element*/
+
+#sky {
+    perspective: 300px;
+    filter: drop-shadow(0px 160px 10px rgba(0, 0, 0, 0.2));
+}
+
+
+/* Defines descendant element are rendered in 3D space */
+
+#sky div {
+    transform-style: preserve-3d;
+}
+
+
+/* To center the bird */
+
+.bird_fly {
+    width: 70wh;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bird_rotate 15s linear infinite;
+}
+
+
+/* Defines the bird rotates along z-axis to fly naturally */
+
+@keyframes bird_rotate {
+    from {
+        transform: rotateX(-120deg) rotateY(10deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(-120deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+
+/* Defines bird's body */
+
+.bird_body {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    background-color: #ff7519;
+}
+
+
+/* Defines head and tail, rotate 20deg makes head and tails in 3D style
+   Reset the origin of rotate:
+   rotate head at bottom middle, and tail at top middle
+*/
+
+.bird_head {
+    position: absolute;
+    top: -40px;
+    border-bottom: 40px solid #e2167c;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    transform-origin: 50% 100%;
+    transform: rotateX(20deg);
+}
+
+.left_tail {
+    position: absolute;
+    height: 30px;
+    top: 60px;
+    border-left: 19px solid #d47bc5;
+    border-bottom: 20px solid transparent;
+    transform-origin: 50% 0;
+    transform: rotateX(-20deg);
+}
+
+.right_tail {
+    position: absolute;
+    height: 30px;
+    left: 20px;
+    top: 60px;
+    border-right: 19px solid #d47bc5;
+    border-bottom: 20px solid transparent;
+    transform-origin: 50% 0;
+    transform: rotateX(-20deg);
+}
+
+
+/*  Defines left wing and an aimation allow it flys
+    Reset the origin of rotate:
+    left wing and the top of left wing should rotate along top right corner(100% 0) 
+*/
+
+.left_wing {
+    position: absolute;
+    left: -40px;
+    height: 55px;
+    border-right: 40px solid #7b0053;
+    border-bottom: 5px solid transparent;
+    transform-origin: 100% 0;
+    animation: leftWing 1.25s infinite alternate;
+}
+
+.left_wing_top {
+    position: absolute;
+    left: -60px;
+    border-top: 55px solid #dd1537;
+    border-left: 60px solid transparent;
+    transform-origin: 100% 0;
+    animation: leftWing 1.25s infinite alternate;
+}
+
+
+/*  Defines right wing and an animation allow it flys
+    Reset the orgin of rotate 
+    right wing and the top of right wing should rotate along top left corner(0 0)
+*/
+
+.right_wing {
+    position: absolute;
+    left: 40px;
+    height: 55px;
+    border-left: 40px solid #7b0053;
+    border-bottom: 5px solid transparent;
+    transform-origin: 0 0;
+    animation: rightWing 1.25s infinite alternate;
+}
+
+.right_wing_top {
+    position: absolute;
+    border-top: 55px solid #dd1537;
+    border-right: 60px solid transparent;
+    transform-origin: 0 0;
+    animation: rightWing 1.25s infinite alternate;
+}
+
+@keyframes leftWing {
+    from {
+        transform: rotateY(-50deg);
+    }
+    to {
+        transform: rotateY(50deg);
+    }
+}
+
+@keyframes rightWing {
+    from {
+        transform: rotateY(50deg);
+    }
+    to {
+        transform: rotateY(-50deg);
+    }
+}
+
+
+/* Defines TEN lines of wind and make winds moving */
+
+.wind {
+    width: 3px;
+    height: 140px;
+    background-color: rgba(95, 203, 236, 0.5);
+    border-radius: 50px;
+}
+
+.wind:nth-child(1) {
+    transform: translate3d(-40px, 200px, 170px);
+    animation: wind1 1.5s linear 0.3s infinite;
+}
+
+@keyframes wind1 {
+    0% {
+        transform: translate3d(-40px, 200px, 170px);
+    }
+    100% {
+        transform: translate3d(-40px, -170px, 170px);
+    }
+}
+
+.wind:nth-child(2) {
+    transform: translate3d(160px, 140px, 150px);
+    animation: wind2 1s linear 0.5s infinite;
+}
+
+@keyframes wind2 {
+    0% {
+        transform: translate3d(160px, 140px, 150px);
+    }
+    100% {
+        transform: translate3d(160px, -50px, 150px);
+    }
+}
+
+.wind:nth-child(3) {
+    transform: translate3d(150px, -150px, 170px);
+    animation: wind3 1s linear 1s infinite;
+}
+
+@keyframes wind3 {
+    0% {
+        transform: translate3d(150px, -150px, 170px);
+    }
+    100% {
+        transform: translate3d(150px, 150px, 170px);
+    }
+}
+
+.wind:nth-child(4) {
+    transform: translate3d(-80px, -130px, 150px);
+    animation: wind4 1.5s linear 0.8s infinite;
+}
+
+@keyframes wind4 {
+    0% {
+        transform: translate3d(-80px, -130px, 150px);
+    }
+    100% {
+        transform: translate3d(-80px, 130px, 150px);
+    }
+}
+
+.wind:nth-child(5) {
+    transform: translate3d(-10px, 270px, 160px);
+    animation: wind5 1.5s linear 1.3s infinite;
+}
+
+@keyframes wind5 {
+    0% {
+        transform: translate3d(-10px, 270px, 160px);
+    }
+    100% {
+        transform: translate3d(-10px, -180px, 160px);
+    }
+}
+
+.wind:nth-child(6) {
+    transform: translate3d(-40px, 120px, 120px);
+    animation: wind6 2s linear 0.9s infinite;
+}
+
+@keyframes wind6 {
+    0% {
+        transform: translate3d(-40px, 120px, 120px);
+    }
+    100% {
+        transform: translate3d(-40px, -150px, 120px);
+    }
+}
+
+.wind:nth-child(7) {
+    transform: translate3d(20px, -90px, 140px);
+    animation: wind7 0.8s linear 1.2s infinite;
+}
+
+@keyframes wind7 {
+    0% {
+        transform: translate3d(20px, -90px, 140px);
+    }
+    100% {
+        transform: translate3d(20px, 150px, 140px);
+    }
+}
+
+.wind:nth-child(8) {
+    transform: translate3d(70px, -200px, 160px);
+    animation: wind8 2s linear 0.7s infinite;
+}
+
+@keyframes wind8 {
+    0% {
+        transform: translate3d(70px, -200px, 160px);
+    }
+    100% {
+        transform: translate3d(70px, 200px, 160px);
+    }
+}
+
+.wind:nth-child(9) {
+    transform: translate3d(120px, -180px, 100px);
+    animation: wind9 1.5s linear 0.4s infinite;
+}
+
+@keyframes wind9 {
+    0% {
+        transform: translate3d(120px, -180px, 100px);
+    }
+    100% {
+        transform: translate3d(120px, 180px, 100px);
+    }
+}
+
+.wind:nth-child(10) {
+    transform: translate3d(90px, 290px, -50px);
+    animation: wind10 1s linear 1s infinite;
+}
+
+@keyframes wind10 {
+    0% {
+        transform: translate3d(90px, 290px, -50px);
+    }
+    100% {
+        transform: translate3d(90px, -200px, -50px);
+    }
+}
