@@ -9,7 +9,7 @@ Especially, enhance a understanding of the using of **border**, **2D trnasforms*
 ## Some important tips in this project:
 
 - Defines the 3-D perspective in parent element (id selector: #sky), such that its descendant elements which are 3D positioned
-  to get render in 3D space.
+  to get rendering in 3D space.
 - Specifies position of the entire bird by Flexbox.
 - To avoid the bird looks stiff, one can let the bird rotating along Z-axis from 0deg to 360deg.
 - The default *transform-origin* is 50% 50% in horizontal and vertical direction. To let the wings flexibly flying up, <br>
@@ -17,7 +17,7 @@ Especially, enhance a understanding of the using of **border**, **2D trnasforms*
   <br>
   - left wing should rotate along top right corner(100% 0)   
   - right wing should rotate along top left corner(0 0)
-- The wind can be defined individually in 3d space by using *tansform: trnaslate3d(x, y, z)*.
+- The wind can be defined individually in 3d space by using *transform: translate3d(x, y, z)*.
 
 ------
 ![fly Bird](/flyBird_Animation.gif)
