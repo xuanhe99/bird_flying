@@ -18,3 +18,6 @@ Especially, enhance a understanding of the using of **border**, **2D trnasforms*
   - left wing should rotate along top right corner(100% 0)   
   - right wing should rotate along top left corner(0 0)
 - The wind can be defined individually in 3d space by using *tansform: trnaslate3d(x, y, z)*.
+
+------
+![fly Bird](/flyBird_Animation.gif)
