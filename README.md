@@ -20,4 +20,4 @@ Especially, enhance a understanding of the using of **border**, **2D trnasforms*
 - The wind can be defined individually in 3d space by using *transform: translate3d(x, y, z)*.
 
 ------
-![fly Bird](/flyBird_Animation.gif)
+![fly Bird](/birdflying.gif)
