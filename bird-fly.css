@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(43, 211, 223, 0.3);
+    background-color: rgba(62, 163, 221, 0.2);
 }
 
 
@@ -64,7 +64,7 @@ body {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     transform-origin: 50% 100%;
-    transform: rotateX(20deg);
+    transform: rotateX(-20deg);
 }
 
 .left_tail {
