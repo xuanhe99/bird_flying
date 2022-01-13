@@ -89,7 +89,7 @@ body {
 }
 
 
-/*  Defines left wing and an aimation allow it flys
+/*  Defines left wing and an animation to allow it flying
     Reset the origin of rotate:
     left wing and the top of left wing should rotate along top right corner(100% 0) 
 */
@@ -114,8 +114,8 @@ body {
 }
 
 
-/*  Defines right wing and an animation allow it flys
-    Reset the orgin of rotate 
+/*  Defines right wing and an animation to allow it flying
+    Reset the origin of rotate 
     right wing and the top of right wing should rotate along top left corner(0 0)
 */
 
